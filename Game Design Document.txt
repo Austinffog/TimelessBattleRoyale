@@ -1,0 +1,86 @@
+Game Name
+Timeless BattleRoyale
+
+Purpose
+This game is created for the purpose of creating and implementing a game design document and making those ideas and thoughts come to life.
+
+Overview
+* The game will be simple.
+* A single player can move around a small arena with random enemies spawning, the more they defeat the more challenging the enemies become.
+
+Target Audience
+* Gamers interested in Indie Games.
+* Battle Royale games.
+* First person shooter games.
+
+Gameplay
+* The timer counts down from 100 seconds, for each level 1 enemy killed an extra second is anded on.
+* There will be 5 levels for this basic game.
+* Level 2 monsters increase by 2seconds.
+* Level 3 by 3seconds.
+* Level 4 by 4seconds.
+* And level 5 by 5seconds.
+* Level 1 and 2 monsters chase after player.
+* Damage taken by enemies reduces time. ie. 1, 2.5, 3.5, 5, 15.
+
+Gameplay Mechanics
+* Start Menu, gameover menu (if lose), pause menu and victory menu (if win).
+-Start menu buttons: play, exit.
+-Gameover menu buttons: play again, exit, start menu.
+-Pause menu buttons: resume, exit, start menu.
+-Victory menu buttons: play again, exit, start menu.
+
+Game Engine, Language and Type
+* Game will be written in C# using unity.
+* The game will be 2D.
+
+Platforms
+* Created for Windows PC, possibly Linux PC, possibly Mac PC.
+
+Gameplay Features
+* Include a highscore for monsters killed.
+* Gamestate is reset and cannot be saved.
+
+Future Gameplay Ideas
+* Monsters are long distance and shoot too.
+* Each being more difficult to kill, include enemy health.
+* Include different maps to switch between. These maps will have different themes and the monsters will change according to the map and theme.
+* Allow for different weapons to be unlocked and used.
+* Present power ups such as: time increase, time pause, bombs, poison and shields.
+-These power ups will be dropped randomly by monsters.
+* Allow for different characters to be unlocked and played.
+* Increase the rate at which the time goes down towards the end.
+* Since the game is single player, allow for AI team members to fight alongside.
+* Create a mobile (android) version of the game with touch controls.
+
+Assets
+* An arena map.
+* A single player character.
+* Monsters for each level from 1 to 5.
+* Default weapon.
+
+Character Design
+* The character will be a wizard.
+
+UI
+* A timer.
+* A highscore (kill count).
+* Pause button.
+
+Sound
+* Background music.
+* Sound for button clicks.
+* And a sound for firing the weapon of the character.
+* Monsters won't make a sound.
+
+Challenges that were overcome
+* Getting the coroutines to start only once in update method
+-Challenge was overcome by starting the coroutine in start and setting a while loop condition to prevent instantiating gameObjects before the condition is met
+-Starting the coroutine in update kept starting it on every new update frame.
+* Registering the right gameObject collisions amongst each other
+-The enemies colliding with each other would register and increase the killcount and time, this was overcome by checking not only if something has collided with the 
+enemy gameObject but specifying if it was the player bullet.
+* Small challenge: enemy follow player movement
+-The target transform of the player was placed in start this would make the enemy follow from the players old position when the enemy spawned and not update,
+problem solved by placing the player transform into the update method so that it is regularly updating the players position.
+-Also, a vector2 was used but this set the enemy z axis to 0, so a vector3 was used to set the enemy on the same z axis as the player, to be seen. 
